@@ -1,7 +1,7 @@
 package boardgame;
 
 public class Board {
-	private int column;
+	private int columns;
 	private int rows;
 	private Piece [][] piece;
 	
@@ -10,13 +10,13 @@ public class Board {
 			throw new BoardException("Error creating board: there must be at least 1 row and 1 column");
 		}
 		
-		this.column = column;
+		this.columns = column;
 		this.rows = rows;
 		piece = new Piece[rows][column];
 	}
 	
 	public int getColumn() {
-		return column;
+		return columns;
 	}
 	
 	public int getRows() {
@@ -64,7 +64,7 @@ public class Board {
 	}
 	
 	private boolean positionExists(int row, int column) {
-		return row >= 0 && row < rows  && column >= 0 && column < this.column;
+		return row >= 0 && row < rows && column >=0 && column < rows;
 	}
 	
 	public boolean positionExists(Position position) {
